@@ -47,22 +47,22 @@ const About = () => {
           <div className="resume-section">
             <h3>Download Resume</h3>
             <div className="resume-grid">
-              <a href="/resume/resume-en.pdf" className="resume-card" download>
+              <a href={require("../Files/resume_en.pdf")} className="resume-card" download>
                 <div className="resume-icon">🇬🇧</div>
                 <div className="resume-info">
                   <h4>English Version</h4>
-                  <span className="file-info">PDF • Updated Jan 2024</span>
+                  <span className="file-info">PDF • Updated Jan 2025</span>
                 </div>
-                <div className="download-icon">⬇️</div>
+                <div className="download-icon">⬇</div>
               </a>
               
-              <a href="/resume/resume-cn.pdf" className="resume-card" download>
+              <a href={require("../Files/resume_cn.pdf")} className="resume-card" download>
                 <div className="resume-icon">🇨🇳</div>
                 <div className="resume-info">
                   <h4>Chinese Version</h4>
-                  <span className="file-info">PDF • Updated Jan 2024</span>
+                  <span className="file-info">PDF • Updated Jan 2025</span>
                 </div>
-                <div className="download-icon">⬇️</div>
+                <div className="download-icon">⬇</div>
               </a>
             </div>
           </div>

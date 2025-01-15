@@ -1,6 +1,6 @@
 .about {
   min-height: 100vh;
-  padding: 120px 40px;
+  padding: 120px 0;
   background-color: #1a1a1a;
   color: #ffffff;
 }
@@ -8,11 +8,13 @@
 .grid-container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 20px;
+  padding: 0 40px;
+  width: 100%;
 }
 
 .about-header {
-  margin-bottom: 60px;
+  margin-bottom: 80px;
+  margin-left: 60px;
   text-align: left;
   max-width: 800px;
 }
@@ -42,7 +44,8 @@
 .about-content {
   display: flex;
   flex-direction: column;
-  gap: 60px;
+  gap: 100px;
+  margin-left: 60px;
 }
 
 /* Bio Section */
@@ -246,6 +249,8 @@
 /* Languages Section */
 .languages-section {
   width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .languages-section h3 {
@@ -257,32 +262,56 @@
 .languages-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
+  gap: 30px;
+  max-width: 1000px;
+  margin: 0 auto;
 }
 
 .language-card {
   background-color: #2d2d2d;
-  padding: 20px 25px;
+  padding: 30px;
   border: 1px solid #FF0000;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  flex-direction: column;
+  gap: 8px;
   transition: transform 0.3s ease;
+  text-align: center;
 }
 
 .language-card:hover {
   transform: translateY(-5px);
+  background-color: #3d3d3d;
+  box-shadow: 0 5px 15px rgba(255, 0, 0, 0.1);
 }
 
 .language-name {
+  font-size: 20px;
   font-weight: 600;
   color: #ffffff;
-  font-size: 16px;
 }
 
 .language-level {
+  font-size: 16px;
   color: #b0b0b0;
-  font-size: 14px;
+}
+
+@media (max-width: 1024px) {
+  .languages-grid {
+    gap: 20px;
+    padding: 0 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .languages-grid {
+    grid-template-columns: 1fr;
+    max-width: 400px;
+    padding: 0 20px;
+  }
+
+  .language-card {
+    padding: 25px;
+  }
 }
 
 /* Tablet Responsive */
@@ -294,6 +323,11 @@
   .skills-grid,
   .languages-grid {
     grid-template-columns: repeat(2, 1fr);
+  }
+
+  .about-header,
+  .about-content {
+    margin-left: 40px;
   }
 }
 
@@ -328,5 +362,10 @@
 
   .about-text p {
     font-size: 16px;
+  }
+
+  .about-header,
+  .about-content {
+    margin-left: 20px;
   }
 }
