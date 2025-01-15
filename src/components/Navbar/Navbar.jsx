@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import './Navbar.css';
 
 const Navbar = () => {
@@ -11,9 +12,9 @@ const Navbar = () => {
   return (
     <nav className="navbar">
       <div className="navbar-container">
-        <a href="/" className="navbar-logo">
+        <Link to="/" className="navbar-logo">
           Jericho Foong
-        </a>
+        </Link>
         
         <div className={`hamburger ${isOpen ? 'active' : ''}`} onClick={toggleMenu}>
           <span className="bar"></span>
@@ -23,16 +24,16 @@ const Navbar = () => {
 
         <ul className={`nav-menu ${isOpen ? 'active' : ''}`}>
           <li className="nav-item">
-            <a href="#home" className="nav-link" onClick={toggleMenu}>Home</a>
+            <Link to="/" className="nav-link" onClick={toggleMenu}>Home</Link>
           </li>
           <li className="nav-item">
-            <a href="#about" className="nav-link" onClick={toggleMenu}>About</a>
+            <Link to="/about" className="nav-link" onClick={toggleMenu}>About</Link>
           </li>
           <li className="nav-item">
-            <a href="#projects" className="nav-link" onClick={toggleMenu}>Projects</a>
+            <Link to="/projects" className="nav-link" onClick={toggleMenu}>Projects</Link>
           </li>
           <li className="nav-item">
-            <a href="#contact" className="nav-link" onClick={toggleMenu}>Contact</a>
+            <Link to="/contact" className="nav-link" onClick={toggleMenu}>Contact</Link>
           </li>
         </ul>
       </div>
