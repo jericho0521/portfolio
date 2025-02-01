@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import './Home.css';
 
 const Home = () => {
@@ -11,11 +11,36 @@ const Home = () => {
     { name: 'Pandas', category: 'Data Analysis' }
   ];
 
+  useEffect(() => {
+    const observerOptions = {
+      root: null,
+      rootMargin: '0px',
+      threshold: 0.1
+    };
+
+    const observerCallback = (entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    };
+
+    const observer = new IntersectionObserver(observerCallback, observerOptions);
+
+    // Observe all elements with animation classes
+    document.querySelectorAll('.fade-in-up, .tech-item, .cta-button').forEach(element => {
+      observer.observe(element);
+    });
+
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <section className="home" id="home">
       <div className="swiss-cross"></div>
       <div className="grid-container">
-        <div className="hero-section">
+        <div className="hero-section fade-in-up">
           <p className="swiss-label">Portfolio / 2024</p>
           <h1 className="hero-title">
             <span className="greeting">Hello, I'm</span>
@@ -30,7 +55,7 @@ const Home = () => {
           </p>
         </div>
 
-        <div className="cta-container">
+        <div className="cta-container fade-in-up delay-1">
           <a href="#projects" className="cta-button primary">
             <span className="button-number">01</span>
             <span className="button-text">View Projects</span>
@@ -41,11 +66,11 @@ const Home = () => {
           </a>
         </div>
 
-        <div className="tech-stack">
+        <div className="tech-stack fade-in-up delay-2">
           <div className="swiss-label">Tech Stack</div>
           <div className="tech-grid">
             {techStack.map((tech, index) => (
-              <div key={tech.name} className="tech-item">
+              <div key={tech.name} className={`tech-item delay-${index + 1}`}>
                 <span className="tech-number">{(index + 1).toString().padStart(2, '0')}</span>
                 <span className="tech-name">{tech.name}</span>
                 <span className="tech-category">{tech.category}</span>

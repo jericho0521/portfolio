@@ -8,8 +8,9 @@
 .grid-container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 40px;
+  padding: 0 20px;
   width: 100%;
+  box-sizing: border-box;
 }
 
 .about-header {
@@ -135,6 +136,8 @@
 /* Skills Section */
 .skills-section {
   width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .skills-section h3 {
@@ -146,14 +149,20 @@
 .skills-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
+  gap: 30px;
+  width: 100%;
 }
 
 .skill-category {
   background-color: #2d2d2d;
-  padding: 25px;
+  padding: 35px;
   border: 1px solid #FF0000;
   transition: transform 0.3s ease;
+  height: 400px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
 }
 
 .skill-category:hover {
@@ -161,8 +170,8 @@
 }
 
 .skill-category h4 {
-  font-size: 18px;
-  margin-bottom: 20px;
+  font-size: 22px;
+  margin-bottom: 30px;
   color: #ffffff;
   text-transform: capitalize;
 }
@@ -175,10 +184,11 @@
 
 .skill-category li {
   color: #b0b0b0;
-  margin-bottom: 12px;
-  padding-left: 20px;
+  margin-bottom: 20px;
+  padding-left: 25px;
   position: relative;
   font-size: 16px;
+  line-height: 1.5;
 }
 
 .skill-category li:last-child {
@@ -303,46 +313,84 @@
 }
 
 @media (max-width: 768px) {
-  .languages-grid {
-    grid-template-columns: 1fr;
-    max-width: 400px;
-    padding: 0 20px;
+  .about {
+    padding: 100px 0 60px;
   }
 
-  .language-card {
-    padding: 25px;
-  }
-}
-
-/* Tablet Responsive */
-@media (max-width: 1024px) {
   .grid-container {
-    padding: 0 15px;
-  }
-  
-  .skills-grid,
-  .languages-grid {
-    grid-template-columns: repeat(2, 1fr);
+    padding: 0 20px;
+    max-width: 90%;
+    margin: 0 auto;
+    width: 100%;
+    overflow: hidden;
   }
 
   .about-header,
   .about-content {
-    margin-left: 40px;
-  }
-}
-
-/* Mobile Responsive */
-@media (max-width: 768px) {
-  .about {
-    padding: 100px 20px 60px;
-  }
-
-  .grid-container {
+    margin-left: 0;
+    margin-right: 0;
+    width: 100%;
+    box-sizing: border-box;
     padding: 0 10px;
   }
 
-  .about-header {
-    margin-bottom: 40px;
+  .resume-grid {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0 10px;
+  }
+
+  .skills-section {
+    width: 90%;
+    padding: 0;
+    margin: 0 auto;
+    box-sizing: border-box;
+  }
+
+  .skills-grid {
+    grid-template-columns: 1fr;
+    justify-items: center;
+  }
+
+  .skill-category {
+    height: 400px;
+    padding: 30px;
+  }
+
+  .skill-category h4 {
+    font-size: 20px;
+    margin-bottom: 25px;
+  }
+
+  .skill-category li {
+    margin-bottom: 18px;
+  }
+
+  .education-section {
+    width: 90%;
+    margin: 0 auto;
+  }
+
+  .languages-section {
+    width: 90%;
+    margin: 0 auto;
+  }
+
+  .languages-grid {
+    width: 100%;
+    padding: 0;
+  }
+
+  .language-card {
+    padding: 20px;
+  }
+
+  .language-name {
+    font-size: 16px;
+  }
+
+  .language-level {
+    font-size: 14px;
   }
 
   .about-title {
@@ -363,9 +411,80 @@
   .about-text p {
     font-size: 16px;
   }
+}
 
-  .about-header,
-  .about-content {
-    margin-left: 20px;
+@media (max-width: 480px) {
+  .grid-container {
+    max-width: 85%;
+    padding: 0 15px;
   }
+
+  .skills-section,
+  .education-section,
+  .languages-section {
+    width: 85%;
+  }
+}
+
+/* Animation Classes */
+.fade-in-up {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.fade-in-up.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Add animation delay for items */
+.delay-1 {
+  transition-delay: 0.2s;
+}
+
+.delay-2 {
+  transition-delay: 0.4s;
+}
+
+.delay-3 {
+  transition-delay: 0.6s;
+}
+
+/* Apply to sections */
+.about-text,
+.resume-section,
+.skills-section,
+.education-section,
+.languages-section {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.about-text.visible,
+.resume-section.visible,
+.skills-section.visible,
+.education-section.visible,
+.languages-section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Grid item animations */
+.skill-category,
+.education-card,
+.language-card,
+.resume-card {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.5s ease-out;
+}
+
+.skill-category.visible,
+.education-card.visible,
+.language-card.visible,
+.resume-card.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
