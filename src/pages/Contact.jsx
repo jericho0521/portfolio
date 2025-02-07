@@ -19,21 +19,42 @@ const Contact = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(formData);
-    setFormData({
-      name: '',
-      email: '',
-      subject: '',
-      message: ''
-    });
-    alert('Message sent successfully!');
+    try {
+      const response = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          access_key: '83496fcc-efba-455b-a684-313c92ca6fa2',
+          name: formData.name,
+          email: formData.email,
+          subject: formData.subject,
+          message: formData.message
+        })
+      });
+      
+      const data = await response.json();
+      if (data.success) {
+        setFormData({
+          name: '',
+          email: '',
+          subject: '',
+          message: '',
+        });
+        alert('Message sent successfully!');
+      }
+    } catch (error) {
+      console.error('Error:', error);
+      alert('Something went wrong. Please try again.');
+    }
   };
 
   return (
     <main className="contact-page">
       <div className="contact-container">
         <header className="contact-header">
-          <h1>Contact</h1>
+          <h1 style={{ marginTop: '5rem' }}>Contact</h1>
           <div className="red-line"></div>
         </header>
 
@@ -51,8 +72,13 @@ const Contact = () => {
           </section>
 
           <section className="contact-form">
-            <h2>Send a Message</h2>
+            <h2 style={{ marginTop: '-4rem' }}>Send a Message</h2>
             <form onSubmit={handleSubmit}>
+              <input
+                type="hidden"
+                name="uuid"
+                value={formData.uuid}
+              />
               <div className="form-group">
                 <input
                   type="text"
