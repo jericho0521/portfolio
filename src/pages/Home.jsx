@@ -41,7 +41,7 @@ const Home = () => {
       <div className="swiss-cross"></div>
       <div className="grid-container">
         <div className="hero-section fade-in-up">
-          <p className="swiss-label">Portfolio / 2024</p>
+          <p className="swiss-label">Portfolio / 2025</p>
           <h1 className="hero-title">
             <span className="greeting">Hello, I'm</span>
             <span className="name">Jericho Foong</span>

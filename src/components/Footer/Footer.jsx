@@ -12,9 +12,9 @@ const Footer = () => {
             responsive and intuitive web interfaces, with experience in data analysis.
           </p>
           <div className="social-links">
-            <a href="https://github.com" target="_blank" rel="noopener noreferrer">Github</a>
-            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-            <a href="mailto:contact@example.com">Email</a>
+            <a href="https://github.com/jericho0521" target="_blank" rel="noopener noreferrer">Github</a>
+            <a href="https://linkedin.com/in/jerichofoong" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+            <a href="mailto:jericho0521.@gmail.com">Email</a>
           </div>
         </div>
       </div>
