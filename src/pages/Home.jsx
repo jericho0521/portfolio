@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import './Home.css';
 
 const Home = () => {
@@ -56,14 +57,14 @@ const Home = () => {
         </div>
 
         <div className="cta-container fade-in-up delay-1">
-          <a href="#projects" className="cta-button primary">
+          <Link to="/projects" className="cta-button primary">
             <span className="button-number">01</span>
             <span className="button-text">View Projects</span>
-          </a>
-          <a href="#contact" className="cta-button secondary">
+          </Link>
+          <Link to="/contact" className="cta-button secondary">
             <span className="button-number">02</span>
             <span className="button-text">Contact Me</span>
-          </a>
+          </Link>
         </div>
 
         <div className="tech-stack fade-in-up delay-2">

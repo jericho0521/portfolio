@@ -79,7 +79,7 @@ const About = () => {
           <div className="resume-section fade-in-up">
             <h3>Download Resume</h3>
             <div className="resume-grid">
-              <a href={require("../Files/resume_en.pdf")} className="resume-card delay-1" download>
+              <a href="/resume_en.pdf" className="resume-card delay-1" download>
                 <div className="resume-icon">🇬🇧</div>
                 <div className="resume-info">
                   <h4>English Version</h4>
@@ -88,7 +88,7 @@ const About = () => {
                 <div className="download-icon">⬇</div>
               </a>
               
-              <a href={require("../Files/resume_cn.pdf")} className="resume-card delay-2" download>
+              <a href="/resume_cn.pdf" className="resume-card delay-2" download>
                 <div className="resume-icon">🇨🇳</div>
                 <div className="resume-info">
                   <h4>Chinese Version</h4>

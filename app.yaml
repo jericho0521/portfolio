@@ -1,0 +1,31 @@
+runtime: nodejs22  # Ensure this version is supported by Google App Engine
+env: standard
+
+handlers:
+  # This handler is for the main entry point to the application
+  - url: /
+    static_files: build/index.html
+    upload: build/index.html
+    secure: always
+    http_headers:
+      Cache-Control: "no-cache, must-revalidate"
+
+  # This handler is for all other static files
+  - url: /(.*\.(json|ico|js|png|jpg|jpeg|svg|css|txt|woff|woff2|ttf|eot))
+    static_files: build/\1
+    upload: build/(.*\.(json|ico|js|png|jpg|jpeg|svg|css|txt|woff|woff2|ttf|eot))
+    secure: always
+    http_headers:
+      Cache-Control: "max-age=31536000"
+
+  # Catch-all handler for client-side routing
+  - url: /.*
+    static_files: build/index.html
+    upload: build/index.html
+    secure: always
+    http_headers:
+      Cache-Control: "no-cache, must-revalidate"
+
+automatic_scaling:
+  min_instances: 0
+  max_instances: 2

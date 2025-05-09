@@ -22,7 +22,7 @@ const Projects = () => {
       description: "A data analysis project that segments customers based on their purchasing behavior, demographics, and preferences. Using machine learning techniques to identify distinct customer groups and provide actionable marketing insights.",
       image: require("../Files/cpa.png"),
       technologies: ["Scala", "SQL", "Spark", "Data Visualization"],
-      liveLink: "/Customer Personality Analysis Code (2).html",
+      liveLink: "Customer Personality Analysis Code (2).html",
       category: "Data Analysis",
       highlights: [
         "Analyzed customer data using clustering algorithms",
