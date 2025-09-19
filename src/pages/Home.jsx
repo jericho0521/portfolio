@@ -50,7 +50,7 @@ const Home = () => {
           <h2 className="hero-subtitle">Frontend Developer</h2>
           <div className="swiss-line"></div>
           <p className="hero-description">
-            Based in Kuala Lumpur, Malaysia. Passionate about creating engaging web experiences 
+            Based in Kuala Lumpur Malaysia. Passionate about creating engaging web experiences 
             with a background in data analysis. I focus on building user-friendly interfaces
             that make an impact.
           </p>

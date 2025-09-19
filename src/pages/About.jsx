@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import { Helmet } from 'react-helmet';
 import './About.css';
 
 const About = () => {
@@ -56,6 +57,12 @@ const About = () => {
   }, []);
 
   return (
+    <>
+    <Helmet>
+      <title>About — Jericho Foong</title>
+      <meta name="robots" content="noindex, nofollow" />
+      <meta name="description" content="About Jericho Foong, Frontend Developer in Kuala Lumpur." />
+    </Helmet>
     <section className="about" id="about">
       <div className="grid-container">
         <div className="about-header fade-in-up">
@@ -146,6 +153,7 @@ const About = () => {
         </div>
       </div>
     </section>
+    </>
   );
 };
 
