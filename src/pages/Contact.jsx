@@ -26,7 +26,7 @@ const Contact = () => {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-          access_key: '83496fcc-efba-455b-a684-313c92ca6fa2',
+          access_key: process.env.REACT_APP_WEB3FORMS_ACCESS_KEY,
           name: formData.name,
           email: formData.email,
           subject: formData.subject,
