@@ -63,7 +63,7 @@ const Contact = () => {
             <h2>Get in Touch</h2>
             <div className="contact-details">
               <p>Phone: +60 (11) 542-57521</p>
-              <p>Email: jericho0521.@gmail.com</p>
+              <p>Email: jericho0521@gmail.com</p>
               <div className="social-links">
                 <a href="https://github.com/jericho0521" target="_blank" rel="noopener noreferrer">GitHub</a>
                 <a href="https://linkedin.com/in/jerichofoong" target="_blank" rel="noopener noreferrer">LinkedIn</a>
