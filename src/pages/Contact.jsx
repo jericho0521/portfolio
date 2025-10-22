@@ -20,18 +20,18 @@ const Contact = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
+      // Create form data for Web3Forms
+      const formDataToSend = new FormData();
+      formDataToSend.append('access_key', process.env.REACT_APP_WEB3FORMS_ACCESS_KEY);
+      formDataToSend.append('name', formData.name);
+      formDataToSend.append('email', formData.email);
+      formDataToSend.append('subject', formData.subject);
+      formDataToSend.append('message', formData.message);
+
       const response = await fetch('https://api.web3forms.com/submit', {
         method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          access_key: process.env.REACT_APP_WEB3FORMS_ACCESS_KEY,
-          name: formData.name,
-          email: formData.email,
-          subject: formData.subject,
-          message: formData.message
-        })
+        mode: 'cors',
+        body: formDataToSend
       });
       
       const data = await response.json();
@@ -43,6 +43,9 @@ const Contact = () => {
           message: '',
         });
         alert('Message sent successfully!');
+      } else {
+        console.error('Form submission failed:', data);
+        alert('Failed to send message. Please try again.');
       }
     } catch (error) {
       console.error('Error:', error);
